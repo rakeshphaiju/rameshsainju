@@ -1,0 +1,27 @@
+.foot {
+  position: relative;
+  width: 100%;
+  bottom: 0;
+  height: auto;
+
+}
+
+.foot-text {
+  text-align: center;
+  font-size: 20px;
+}
+
+hr {
+  position: relative;
+  margin-left: 40px;
+  margin-right: 40px;
+  padding-right:40px; 
+}
+
+.social-icons{
+  float: left;
+  padding: 0px;
+  position: absolute;
+  left: 148px; 
+  color: white;
+}

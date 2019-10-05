@@ -1,0 +1,35 @@
+.nav {
+  overflow: hidden;
+}
+
+.nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.nav li {
+  display: inline;
+}
+
+.nav-link {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  float: right;
+  color: white;
+  font-family: "Rosarivo", serif;
+  font-size: 30px;
+  padding-right: 35px;
+  padding-top: 20px;
+}
+.nav-left {
+  padding: 10px;
+  text-decoration: none;
+  float: left;
+  color: white;
+  font-family: "Rosarivo", serif;
+  font-size: 30px;
+  padding-left: 35px;
+  padding-top: 20px;
+}
+

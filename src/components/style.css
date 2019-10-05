@@ -1,0 +1,46 @@
+.about{
+font-size: 30px;
+margin-left: 20%;
+margin-right: 20%; 
+position: relative;
+padding: 0%;
+
+}
+
+.image {
+margin-left: 30%;
+float: center;
+}
+.some-text{
+  color: white;
+  overflow: auto;
+  padding-bottom: 5rem; 
+
+}
+.text-message{
+color: #EAA6A6;
+font-size: 30px;
+
+background: #5A2A2A;
+
+}
+.submit-button{
+  font-size: 30px;
+  background: #E8C7C7;
+border-radius: 7px;
+width: 190px;
+height: 50px;
+cursor: pointer;
+color: #2C1F1F;
+
+}
+
+.text-input{
+  width: 500px;
+height: 40px;
+width: 80%;
+border-radius: 7px;
+font-size: 30px;
+background-color: #E8C7C7;
+
+}

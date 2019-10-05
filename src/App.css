@@ -1,0 +1,14 @@
+.App {
+  background-color: #3A1B1B;
+  color: white;
+  font-family: 'Rosarivo', serif;
+  height: 100%;
+
+}
+.container{
+margin-right: 35px;
+margin-left: 35px; 
+position: relative;
+padding: 0%;
+
+}

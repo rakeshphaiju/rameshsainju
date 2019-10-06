@@ -1,46 +1,58 @@
-.about{
-font-size: 30px;
-margin-left: 20%;
-margin-right: 20%; 
-position: relative;
-padding: 0%;
-
+.about {
+  font-size: 30px;
+  margin-left: 20%;
+  margin-right: 20%;
+  position: relative;
+  padding: 0%;
 }
 
 .image {
-margin-left: 30%;
-float: center;
+  margin-left: 30%;
+  float: center;
 }
-.some-text{
+.some-text {
   color: white;
   overflow: auto;
-  padding-bottom: 5rem; 
-
+  padding-bottom: 5rem;
 }
-.text-message{
-color: #EAA6A6;
-font-size: 30px;
-
-background: #5A2A2A;
-
-}
-.submit-button{
+.text-message {
+  color: #eaa6a6;
   font-size: 30px;
-  background: #E8C7C7;
-border-radius: 7px;
-width: 190px;
-height: 50px;
-cursor: pointer;
-color: #2C1F1F;
 
+  background: #5a2a2a;
+}
+.submit-button {
+  font-size: 30px;
+  background: #e8c7c7;
+  border-radius: 7px;
+  width: 190px;
+  height: 50px;
+  cursor: pointer;
+  color: #2c1f1f;
 }
 
-.text-input{
+.text-input {
   width: 500px;
-height: 40px;
-width: 80%;
-border-radius: 7px;
-font-size: 30px;
-background-color: #E8C7C7;
+  height: 40px;
+  width: 80%;
+  border-radius: 7px;
+  font-size: 30px;
+  background-color: #e8c7c7;
+}
 
+.youtube {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  padding-top: 25px;
+  height: 0;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.youtube iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }

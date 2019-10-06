@@ -1,0 +1,13 @@
+.gallery-image{
+  width: 100%;
+  height: 500px;
+  position: relative;
+}
+.gallery-text{
+  position: absolute;
+  bottom: 10%;
+  color: white;
+  left: 5%;
+  font-size: 25px;
+
+}

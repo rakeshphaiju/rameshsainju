@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import '../style.css';
 
 const API = "AIzaSyDa0fjI0OIiokU4RdFZPWPgnpdtd34n7vQ";
 const channelID = "UCPiMXPNL1lnCJxZCZKkZNTA";
@@ -13,14 +14,14 @@ class Youtube extends Component {
     this.state = {
       resultyt: []
     };
-    this.clicked = this.clicked.bind(this);
+    this.load = this.load.bind(this);
   }
 
   componentWillMount() {
-    this.clicked();
+    this.load();
   }
 
-  clicked = () => {
+  load = () => {
     fetch(finalURL)
       .then(response => response.json())
       .then(responseJson => {
@@ -36,23 +37,22 @@ class Youtube extends Component {
   };
 
   render() {
-    console.log(finalURL);
-    console.log(this.state.resultyt);
+    //console.log(finalURL);
+    //console.log(this.state.resultyt);
     return (
       <div>
         {this.state.resultyt.map((link, i) => {
           var frame = (
             <div key={i} className="youtube">
               {" "}
-              <iframe
+              <center><iframe
                 title="myFrame"
-                width="560"
-                height="315"
                 src={link}
                 frameBorder="0"
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
-              ></iframe>{" "}
+              ></iframe>
+              </center>{" "}
             </div>
           );
           return frame;

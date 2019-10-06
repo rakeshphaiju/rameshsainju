@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Gallery from './Gallery/Gallery';
 import pic1 from './Pictures/pic1.jpg';
 import pic2 from './Pictures/pic2.jpg';
+import pic3 from './Pictures/pic3.jpg';
 
 class Landing extends Component{
   render(){
@@ -18,6 +19,12 @@ class Landing extends Component{
       alt='pic1'
       text='WildLife'
         />
+      <Gallery
+      path={pic3}
+      alt='pic3'
+      text='Landscape'
+      />
+    
     </div>
   )
   }

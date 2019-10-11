@@ -17,7 +17,7 @@ class Youtube extends Component {
     this.load = this.load.bind(this);
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.load();
   }
 

@@ -1,31 +1,41 @@
-import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import "./App.css";
-import Landing from "./components/Landing";
-import Cinematography from "./components/Cinematography";
-import About from "./components/About";
-import Contact from "./components/Contact";
+// Import React stuff
+import React, { Component } from 'react';
+import { Link } from 'react-router';
+// Import compiled CSS
+import "./components/style.css";
+import './App.css';
+// Import photo album info
+import data from './data';
+
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
-import "./components/style.css";
 
-function App() {
-  return (
-    <Router>
+// Create main React component
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      data,
+    };
+  }
+  render() {
+    // Clone child components giving them props from the state
+    const childrenWithProps = React.Children.map(this.props.children, child =>
+      React.cloneElement(child, {
+        albums: this.state.data,
+      })
+    );
+    return (
       <div className="App">
-        <Header branding="RAMESH SAINJU" />
+        <Header branding ="RAMESH SAINJU" />
         <div className="container">
-          <Switch>
-            <Route exact path="/" component={Landing} />
-            <Route exact path="/cinematography" component={Cinematography} />
-            <Route exact path="/about" component={About} />
-            <Route exact path="/contact" component={Contact} />
-          </Switch>
+          {childrenWithProps}
+          <Footer/>
         </div>
-        <Footer/>
+        
       </div>
-    </Router>
-  );
+    );
+  }
 }
 
 export default App;

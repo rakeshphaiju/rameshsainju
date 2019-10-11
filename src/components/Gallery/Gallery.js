@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from "react-router-dom";
 import './gallery.css';
 
 
@@ -12,8 +13,10 @@ const Gallery = ({
 }) => {
   return(
     <div className="container">
+      <Link to="">
       <img className="gallery-image" src={path} alt={alt}/>
       <p className="gallery-text"><h2>{text}</h2></p>
+      </Link>
     </div>
   );
 };

@@ -14,11 +14,6 @@
   grid-template-columns: 1fr auto 1 fr;
 }
 
-  display: block;
-  padding: 10px;
-  float: right;
-  padding-right: 35px;
-} */
 
 .nav-left {
   grid-column: 1;

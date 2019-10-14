@@ -6,38 +6,34 @@ const Header = props => {
   const { branding } = props;
 
   return (
-    <nav className="nav">
-      <div className="nav-right">
-        <ul>
-          <Link to="/" className="nav-left">
-            {branding}
+    <div className="nav-container">
+      <nav className="nav">
+        <input type="checkbox" className="nav-toggle" />
+        <label for="nav-toggle" className="burger-menu">
+          <i class="fas fa-bars fa-7x" />
+        </label>
+        <Link to="/" className="nav-left">
+          {branding}
+        </Link>
+        <div className="nav-right">
+          <Link to="/" className="nav-link">
+            {" "}
+            GALLERY
           </Link>
-          <li>
-            <Link to="/contact" className="nav-link">
-              CONTACT
-            </Link>
-          </li>
-          <li>
-            <Link to="/about" className="nav-link">
-              ABOUT
-            </Link>
-          </li>
-          <li>
-            <Link to="/cinematography" className="nav-link">
-              {" "}
-              CINEMATOGRAPHY
-            </Link>
-          </li>
+          <Link to="/cinematography" className="nav-link">
+            {" "}
+            CINEMATOGRAPHY
+          </Link>
 
-          <li>
-            <Link to="/" className="nav-link">
-              {" "}
-              GALLERY
-            </Link>
-          </li>
-        </ul>
-      </div>
-    </nav>
+          <Link to="/about" className="nav-link">
+            ABOUT
+          </Link>
+          <Link to="/contact" className="nav-link">
+            CONTACT
+          </Link>
+        </div>
+      </nav>
+    </div>
   );
 };
 

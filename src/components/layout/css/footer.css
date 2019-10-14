@@ -12,7 +12,7 @@
 .foot-text {
   text-align: center;
   font-size: 25px;
-  color: white;
+
 }
 
 hr {
@@ -24,7 +24,6 @@ hr {
   float: left;
   position: relative;
   left: 148px; 
-  color: white;
   cursor: pointer;
 }
 
@@ -56,5 +55,9 @@ hr {
     width: 100%;
     left: 0px;
 
+  }
+
+  .social-icons fa-instagram:hover{
+    opacity: .10;
   }
 }

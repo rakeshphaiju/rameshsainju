@@ -4,15 +4,7 @@ const data =  [
 		photos: [
 			{
 				img: "portrait1.jpg",
-				cap: "Thinking Puppy"
-			},
-			{
-				img: "pupp2.jpg",
-				cap: "Sad Puppy"
-			},
-			{
-				img: "puppy3.jpg",
-				cap: "Running Puppy"
+				cap: "Thinking Arttu"
 			}
 		]
 	},
@@ -31,6 +23,15 @@ const data =  [
 			{
 				img:"landscape1.jpg",
 				cap:"Snowy Finland"
+			}
+		]
+	},
+	{
+		name:"Nepal",
+		photos:[
+			{
+				img:"langtang.jpg",
+				cap:"Nepal"
 			}
 		]
 	}

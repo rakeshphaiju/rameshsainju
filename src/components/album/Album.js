@@ -1,7 +1,5 @@
-//Import React stuff
 import React from 'react';
 import { Link } from 'react-router';
-// Import component
 import ImgThumb from './ImgThumb';
 
 const Album = props => {
@@ -10,13 +8,12 @@ const Album = props => {
     album => album.name === props.params.albumName
   );
   // Pass down props to each image thumbnail
-  const photoThumbs = thisAlbum[0].photos.map((photo, i) => {
+  const photos = thisAlbum[0].photos.map((photo, i) => {
     return (
       <ImgThumb
         key={i}
         id={i}
         img={photo.img}
-        cap={photo.cap}
         albumName={thisAlbum[0].name}
       />
     );
@@ -25,10 +22,10 @@ const Album = props => {
     <div>
       <p className="arrow">&#10096;</p>
       <Link to="/" id="breadcrumb">
-        Home
+        Back
       </Link>
       <h1 className="title">{thisAlbum[0].name}</h1>
-      <div className="thumbContainer">{photoThumbs}</div>
+      <div className="albumphoto">{photos}</div>
     </div>
   );
 };

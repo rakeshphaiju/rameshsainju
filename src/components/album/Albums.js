@@ -1,6 +1,4 @@
-// Import React stuff
 import React from 'react';
-// Import component
 import AlbumThumb from './AlbumThumb';
 
 const Albums = props => {

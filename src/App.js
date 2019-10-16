@@ -1,6 +1,5 @@
 // Import React stuff
 import React, { Component } from 'react';
-import { Link } from 'react-router';
 // Import compiled CSS
 import "./components/style.css";
 import './App.css';

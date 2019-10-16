@@ -27,6 +27,10 @@ hr {
   cursor: pointer;
 }
 
+.fab:hover{
+  opacity: .6;
+} 
+
 @media only screen and (max-width: 480px){
   .foot-text{
     font-size: 15px;

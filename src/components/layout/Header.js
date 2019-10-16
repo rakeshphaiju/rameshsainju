@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Link } from "react-router";
+import {Link} from 'react-router';
 import "./css/header.css";
 const Header = props => {
   const { branding } = props;
@@ -12,7 +12,7 @@ const Header = props => {
           {branding}
         </Link>
         <input type="checkbox" id="nav-toggle" className="nav-toggle" />
-        <label for="nav-toggle" className="burger-menu">
+        <label htmlFor="nav-toggle" className="burger-menu">
         <i className="fas fa-bars"></i>
         </label>
         <div className="nav-right">

@@ -6,6 +6,7 @@ import "./css/footer.css";
     <div className="foot">
       <hr/>
       <p className="social-icons">
+
        <a href="https://www.instagram.com/rameshsainju/" target="_blank" rel="noopener noreferrer"> <i className="fab fa-instagram fa-3x"/> </a>&nbsp;	&nbsp;	
         <a href="https://www.facebook.com/rameshsainju" target="_blank" rel="noopener noreferrer"> <i className="fab fa-facebook-square fa-3x"/></a>
       </p>

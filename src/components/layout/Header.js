@@ -2,7 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router";
 import "./css/header.css";
-import bar from "../pictures/bar.png";
 const Header = props => {
   const { branding } = props;
 
@@ -12,8 +11,10 @@ const Header = props => {
         <Link to="/" className="nav-left">
           {branding}
         </Link>
-      
-      
+        <input type="checkbox" id="nav-toggle" className="nav-toggle" />
+        <label for="nav-toggle" className="burger-menu">
+        <i className="fas fa-bars"></i>
+        </label>
         <div className="nav-right">
           <Link to="/" className="nav-link">
             {" "}

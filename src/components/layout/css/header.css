@@ -33,6 +33,7 @@
   width: 20px;
   padding: 10px;
   float: right;
+  display: none;
 }
 
 #nav-toggle{
@@ -60,6 +61,7 @@ nav .nav-left,
     text-align: right;
     display: none;
     width: 100%;
+    border-bottom: 0.5px solid white;
   }
   .nav-right .nav-link {
     text-transform: capitalize;

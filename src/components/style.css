@@ -1,5 +1,5 @@
 .about {
-  font-size: 30px;
+  font-size: 25px;
   margin-left: 20%;
   margin-right: 20%;
   position: relative;
@@ -64,7 +64,8 @@
 @media (max-width: 480px) {
   .about {
     width: 100%;
-    margin: 0; } 
+    margin: 0; 
+    font-size: 15px;} 
   .about-image{
       margin-left: 0px;
       width: 100%;

@@ -4,7 +4,7 @@ import Youtube from "./Youtube/Youtube";
 class Cinematography extends Component {
   render() {
     return (
-      <div className="container">
+      <div className="about">
         <h1>Cinematography</h1>
         <Youtube />
       </div>

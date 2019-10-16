@@ -18,18 +18,18 @@ const Header = props => {
         <div className="nav-right">
           <Link to="/" className="nav-link">
             {" "}
-            GALLERY
+            Gallery
           </Link>
           <Link to="/cinematography" className="nav-link">
             {" "}
-            CINEMATOGRAPHY
+            Cinematography
           </Link>
 
           <Link to="/about" className="nav-link">
-            ABOUT
+            About
           </Link>
           <Link to="/contact" className="nav-link">
-            <i class="far fa-id-card-alt"></i> CONTACT
+           Contact
           </Link>
         </div>
       </nav>

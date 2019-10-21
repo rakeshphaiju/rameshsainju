@@ -1,6 +1,6 @@
 const data =  [
 	{
-		name: "Portrait",
+		name: "portrait",
 		photos: [
 			{
 				img: "portrait1.jpg",
@@ -28,7 +28,7 @@ const data =  [
 		]
 	},
 	{
-		name: "Classic",
+		name: "classic",
 		photos:[
 			{
 				img: "girl.jpg",
@@ -82,7 +82,7 @@ const data =  [
 		]
 	},
 	{
-		name:"Landscapes",
+		name:"landscapes",
 		photos:[
 			{
 				img:"landscape1.jpg",
@@ -91,7 +91,7 @@ const data =  [
 		]
 	},
 	{
-		name:"Nepal",
+		name:"nepal",
 		photos:[
 			{
 				img:"langtang.jpg",

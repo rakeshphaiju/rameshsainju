@@ -14,6 +14,7 @@ const Album = props => {
         key={i}
         id={i}
         img={photo.img}
+        cap={photo.cap}
         albumName={thisAlbum[0].name}
       />
     );

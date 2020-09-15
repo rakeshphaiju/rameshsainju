@@ -19,7 +19,7 @@ const Album = props => {
     );
   });
   return (
-    <div>
+    <div className = "back">
       <p className="arrow">&#10096;</p>
       <Link to="/" id="breadcrumb">
         Back

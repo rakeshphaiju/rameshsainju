@@ -26,7 +26,7 @@ class App extends Component {
     );
     return (
       <div className="App">
-        <Header branding ="RAMESH SAINJU" />
+        <Header branding="RAMESH SAINJU" />
         <div className="container">
           {childrenWithProps}
           <Footer/>

@@ -21,6 +21,9 @@ body {
   position: relative;
   padding: 0%;
 }
+.thumbContainer{
+  animation: transitionIn 0.5s;
+}
 
 a {
   text-decoration: none;
@@ -93,6 +96,7 @@ a {
 }
 
 .albumphoto {
+  animation: transitionIn 0.5s;
   width: 90%;
   display: block;
   margin: 0 auto;

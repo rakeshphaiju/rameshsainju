@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
 import ImgThumb from './ImgThumb';
-
 const Album = props => {
   // Keep only the data from the clicked on album
   const thisAlbum = props.albums.filter(

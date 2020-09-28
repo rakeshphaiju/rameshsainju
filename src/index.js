@@ -12,7 +12,8 @@ import Photo from "./components/album/Photo";
 import Cinematography from "./components/Cinematography";
 import About from "./components/About";
 import Contact from "./components/Contact";
-import NotFound from "./components/layout/NotFound";
+
+import MessageList from "./components/MessageList";
 
 
 ReactDOM.render(
@@ -23,10 +24,11 @@ ReactDOM.render(
       <Route exact path="/cinematography" component={Cinematography} />
       <Route exact path="/about" component={About} />
       <Route exact path="/contact" component={Contact} />
-
+      <Route exact path="/messages" component={MessageList}/>
       <Route path=":albumName" component={Album} />
       <Route path=":albumName/:photoId" component={Photo} />
-     <Route component={NotFound}/>
+      
+   
     </Route>
     </Switch>
   </Router>,

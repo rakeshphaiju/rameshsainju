@@ -1,7 +1,7 @@
 // Import React stuff
 import React, { Component } from 'react';
 // Import compiled CSS
-import "./components/style.css";
+import "./components/css/style.css";
 import './App.css';
 // Import photo album info
 import data from './data';

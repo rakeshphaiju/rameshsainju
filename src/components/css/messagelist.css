@@ -1,0 +1,29 @@
+h2{
+  text-align: center;
+  text-transform: uppercase;
+}
+table{
+  border-collapse: collapse;
+  width: 100%;
+}
+table, th, td{
+  border: 1px solid white;
+  text-align: center;
+} 
+
+th, td{
+ height: 50px;
+}
+
+.del-button{
+  background-color: blue; 
+color: white;
+padding: 10px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+margin: 4px 2px;
+cursor: pointer;
+border-radius: 12px;
+}

@@ -1,5 +1,5 @@
 import React from "react";
-import "./style.css";
+import "./css/style.css";
 import ramesh from "./pictures/Ramesh_Sainju.jpg";
 
 export default function About() {

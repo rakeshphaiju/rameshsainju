@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import '../style.css';
+import '../css/style.css';
 
 const API = "AIzaSyDa0fjI0OIiokU4RdFZPWPgnpdtd34n7vQ";
 const channelID = "UCPiMXPNL1lnCJxZCZKkZNTA";

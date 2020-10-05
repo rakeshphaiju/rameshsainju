@@ -8,11 +8,13 @@ table{
 }
 table, th, td{
   border: 1px solid white;
+  height: 50px;
   text-align: center;
 } 
 
-th, td{
+th{
  height: 50px;
+ text-transform: uppercase;
 }
 
 .del-button{

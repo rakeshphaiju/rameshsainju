@@ -1,56 +1,80 @@
 import React, { Component } from "react";
 import TextInputGroup from "../components/layout/TextInputGroup";
 import "../components/css/style.css";
+import axios from "axios";
 
 
 class Contact extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      name: " ",
-      email: " ",
-      message: " ",
+    this.onChangeName = this.onChangeName.bind(this);
+    this.onChangeEmail = this.onChangeEmail.bind(this);
+    this.onChangeMessage = this.onChangeMessage.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
 
-      errors: {},
+    this.state = {
+      contact_name: " ",
+      contact_email: " ",
+      message: " "
+
     };
   }
 
-  changeHandler = (e) => {
-    this.setState({item: e.target.value})
+  onChangeName(e) {
+    this.setState({ contact_name: e.target.value })
   }
 
-  clickHandler = (e) => {
+  onChangeEmail(e){
+    this.setState({ contact_email: e.target.value })
+  }
+ 
+  onChangeMessage(e){
+    this.setState({ message: e.target.value })
+  }
+
+  onSubmit(e){
     e.preventDefault()
-    console.log(this.state.item)
+
+    const messageObject = {
+      contact_name: this.state.contact_name,
+      contact_email: this.state.contact_email,
+      message: this.state.message
+    };
+    axios.post('http://localhost:4000/message/add', messageObject)
+      .then(res => console.log(res.data.data));
+
+    this.setState({ contact_name: '', contact_email: '', message: ''})
   }
 
   render() {
-    const { name, email, message } = this.state;
 
     return (
       <div className="about">
         <h1>Contact</h1>
         <div className="text-message">
           <p style={{ textDecoration: "underline" }}>Leave a message</p>
-          <form>
+          <form onSubmit= {this.onSubmit}>
             <TextInputGroup
               label="Name: "
               name="name"
               placeholder="Enter name..."
-              value={name}
+              value={this.state.contact_name}
+              onChange={this.onChangeName}
             />
             <TextInputGroup
               label="Email Address: "
               name="email"
               placeholder="Enter email..."
-              value={email}
+              value={this.state.contact_email}
+              onChange={this.onChangeEmail}
             />
             <TextInputGroup
               label="Message: "
               name="message"
               placeholder="Write your message here..."
-              value={message}
+              value={this.state.message}
+              onChange={this.onChangeMessage}
             />
             <br />
             <input type="submit" value="Submit" className="submit-button" />

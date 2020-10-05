@@ -1,42 +1,36 @@
 import React, { Component } from "react";
 import "../components/css/messagelist.css";
 import axios from "axios";
+import MessageTableRow from "./MessageTableRow";
 
-const Message = props => (
-  <tr>
-    <td>{props.message.date}</td>
-    <td>{props.message.contact_name}</td>
-    <td>{props.message.contact_email}</td>
-    <td>{props.message.message}</td>
-  </tr>
-);
 
 class MessageList extends Component {
   constructor(props) {
     super(props);
-    this.state = { messages: [],
- };
+    this.state = { messages: [] };
   }
 
   componentDidMount() {
     axios
-      .get('http://localhost:4000/message/')
-      .then((response) => {
-        this.setState({ messages: response.data.data });
+      .get("http://localhost:4000/message/")
+      .then((res) => {
+        this.setState({ messages: res.data.data });
       })
-      .catch(function (error) {
+      .catch((error) => {
         console.log(error);
       });
   }
 
-  messageList(){
-    return this.state.messages.map(function(currentMessage, i){
-      return <Message message={currentMessage} key={i} />;
-    })
+  messageList() {
+    return this.state.messages.map((res, i) => {
+      return <MessageTableRow obj={res} key={i} />;
+    });
   }
 
-  render(){
-    return(
+  
+
+  render() {
+    return (
       <div>
         <h2> Message List </h2>
         <table>
@@ -49,12 +43,12 @@ class MessageList extends Component {
               <th>Action</th>
             </tr>
           </thead>
-          <tbody>
-            { this.messageList() }
-          </tbody>
+          <tbody>{this.messageList()}
+         
+         </tbody>
         </table>
       </div>
-    )
+    );
   }
 }
 

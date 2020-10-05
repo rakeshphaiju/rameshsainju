@@ -11,9 +11,10 @@ import Photo from "./components/album/Photo";
 
 import Cinematography from "./components/Cinematography";
 import About from "./components/About";
-import Contact from "./components/Contact/Contact";
+import Contact from "./components/contact/Contact";
 
-import MessageList from "./components/Contact/MessageList";
+import MessageList from "./components/contact/MessageList";
+import SubmitSuccess from "./components/contact/SubmitSuccess";
 
 
 ReactDOM.render(
@@ -25,8 +26,12 @@ ReactDOM.render(
       <Route exact path="/about" component={About} />
       <Route exact path="/contact" component={Contact} />
       <Route exact path="/messages" component={MessageList}/>
+      <Route exact path="/submitsuccess" component={SubmitSuccess}/>
+
       <Route path=":albumName" component={Album} />
       <Route path=":albumName/:photoId" component={Photo} />
+
+     
       
    
     </Route>

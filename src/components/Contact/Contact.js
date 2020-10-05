@@ -1,9 +1,10 @@
 import React, { Component } from "react";
-
+import { browserHistory } from 'react-router';
 
 import TextInputGroup from "../layout/TextInputGroup";
 import "../css/style.css";
 import axios from "axios";
+
 
 
 class Contact extends Component {
@@ -20,7 +21,7 @@ class Contact extends Component {
       contact_email: " ",
       message: " ",
 
-      error: {}
+      errors: {}
 
     };
   }
@@ -39,6 +40,24 @@ class Contact extends Component {
 
   onSubmit(e){
     e.preventDefault()
+  
+
+    const {contact_name, contact_email, message} = this.state;
+
+    //check error
+    if(contact_name === ''){
+      this.setState({errors: {contact_name: 'Name is required'}});
+      return;
+    }
+
+    if(contact_email === ''){
+      this.setState({errors: {contact_email: 'Email is required'}});
+      return;
+    }
+    if(message === ''){
+      this.setState({errors: {message: 'Message is required'}});
+      return;
+    }
 
     const messageObject = {
       contact_name: this.state.contact_name,
@@ -47,13 +66,16 @@ class Contact extends Component {
     };
     axios.post('http://localhost:4000/message/add', messageObject)
       .then(res => console.log(res.data.data));
+      browserHistory.push('/submitsuccess');
+     
 
-    this.setState({ contact_name: '', contact_email: '', message: ''})
+    this.setState({ contact_name: '', contact_email: '', message: '', errors: {}})
+    
+
     
   }
 
   render() {
-
     return (
       <div className="about">
         <h1>Contact</h1>
@@ -66,6 +88,7 @@ class Contact extends Component {
               placeholder="Enter name..."
               value={this.state.contact_name}
               onChange={this.onChangeName}
+              error={this.state.errors.contact_name}
             />
             <TextInputGroup
               label="Email Address: "
@@ -73,6 +96,7 @@ class Contact extends Component {
               placeholder="Enter email..."
               value={this.state.contact_email}
               onChange={this.onChangeEmail}
+              error={this.state.errors.contact_email}
             />
             <TextInputGroup
               label="Message: "
@@ -80,9 +104,11 @@ class Contact extends Component {
               placeholder="Write your message here..."
               value={this.state.message}
               onChange={this.onChangeMessage}
+              error={this.state.errors.message}
             />
             <br />
             <input type="submit" value="Submit" className="submit-button" />
+          
           </form>
         </div>
         <p>

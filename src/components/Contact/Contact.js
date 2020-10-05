@@ -1,6 +1,8 @@
 import React, { Component } from "react";
-import TextInputGroup from "../components/layout/TextInputGroup";
-import "../components/css/style.css";
+
+
+import TextInputGroup from "../layout/TextInputGroup";
+import "../css/style.css";
 import axios from "axios";
 
 
@@ -16,7 +18,9 @@ class Contact extends Component {
     this.state = {
       contact_name: " ",
       contact_email: " ",
-      message: " "
+      message: " ",
+
+      error: {}
 
     };
   }
@@ -45,6 +49,7 @@ class Contact extends Component {
       .then(res => console.log(res.data.data));
 
     this.setState({ contact_name: '', contact_email: '', message: ''})
+    
   }
 
   render() {
@@ -54,7 +59,7 @@ class Contact extends Component {
         <h1>Contact</h1>
         <div className="text-message">
           <p style={{ textDecoration: "underline" }}>Leave a message</p>
-          <form onSubmit= {this.onSubmit}>
+          <form onSubmit={this.onSubmit}>
             <TextInputGroup
               label="Name: "
               name="name"

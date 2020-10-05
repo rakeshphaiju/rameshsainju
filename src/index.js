@@ -11,9 +11,9 @@ import Photo from "./components/album/Photo";
 
 import Cinematography from "./components/Cinematography";
 import About from "./components/About";
-import Contact from "./components/Contact";
+import Contact from "./components/Contact/Contact";
 
-import MessageList from "./components/MessageList";
+import MessageList from "./components/Contact/MessageList";
 
 
 ReactDOM.render(

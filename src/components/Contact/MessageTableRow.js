@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import "../components/css/messagelist.css";
+import "../css/messagelist.css";
 
 export default class MessageTableRow extends Component {
   constructor(props) {

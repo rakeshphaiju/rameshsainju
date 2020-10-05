@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "../components/css/messagelist.css";
+import "../css/messagelist.css";
 import axios from "axios";
 import MessageTableRow from "./MessageTableRow";
 

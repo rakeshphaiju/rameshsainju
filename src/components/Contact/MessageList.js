@@ -1,7 +1,9 @@
 import React, { Component } from "react";
+import { browserHistory } from 'react-router';
 import "../css/messagelist.css";
 import axios from "axios";
 import MessageTableRow from "./MessageTableRow";
+import auth from "../../auth";
 
 
 class MessageList extends Component {
@@ -33,6 +35,11 @@ class MessageList extends Component {
     return (
       <div>
         <h2> Message List </h2>
+        <button className="del-button" onClick={() => {
+          auth.logout(()=>{
+            browserHistory.push("/admin");
+          } )
+        }}>Log Out</button>
         <table>
           <thead>
             <tr>
@@ -47,6 +54,7 @@ class MessageList extends Component {
          
          </tbody>
         </table>
+       
       </div>
     );
   }

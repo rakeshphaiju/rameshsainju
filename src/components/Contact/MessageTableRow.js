@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import "../css/messagelist.css";
+import { browserHistory } from "react-router";
 
 export default class MessageTableRow extends Component {
   constructor(props) {
@@ -9,6 +10,7 @@ export default class MessageTableRow extends Component {
   }
 
   deleteMessage() {
+    browserHistory.push('/messages');
     axios
       .delete("http://localhost:4000/message/delete/" + this.props.obj._id)
       .then((res) => {
@@ -17,6 +19,8 @@ export default class MessageTableRow extends Component {
       .catch((error) => {
         console.log(error);
       });
+
+    
   }
 
   render() {

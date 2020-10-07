@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import { browserHistory } from 'react-router';
+import emailjs from "emailjs-com";
+
+import { browserHistory } from "react-router";
 
 import TextInputGroup from "../layout/TextInputGroup";
 import "../css/style.css";
-import axios from "axios";
-
-
+// import axios from "axios";
 
 class Contact extends Component {
   constructor(props) {
@@ -14,31 +14,84 @@ class Contact extends Component {
     this.onChangeName = this.onChangeName.bind(this);
     this.onChangeEmail = this.onChangeEmail.bind(this);
     this.onChangeMessage = this.onChangeMessage.bind(this);
-    this.onSubmit = this.onSubmit.bind(this);
+    this.onSendEmail = this.onSendEmail.bind(this);
+    /* this.onSubmit = this.onSubmit.bind(this); */
 
     this.state = {
       contact_name: " ",
       contact_email: " ",
       message: " ",
-
-      errors: {}
-
+      nameError: "",
+      emailError: "",
+      messageError: "",
     };
   }
 
   onChangeName(e) {
-    this.setState({ contact_name: e.target.value })
+    this.setState({ contact_name: e.target.value });
   }
 
-  onChangeEmail(e){
-    this.setState({ contact_email: e.target.value })
-  }
- 
-  onChangeMessage(e){
-    this.setState({ message: e.target.value })
+  onChangeEmail(e) {
+    this.setState({ contact_email: e.target.value });
   }
 
-  onSubmit(e){
+  onChangeMessage(e) {
+    this.setState({ message: e.target.value });
+  }
+
+  validate = () => {
+    let nameError = "";
+    let emailError = "";
+    let messageError = "";
+
+    if (this.state.contact_name < 1) {
+      nameError = "Invalid Name";
+    }
+
+    if (!this.state.contact_email.includes("@")) {
+      emailError = "Invalid Email";
+    }
+
+    if (this.state.message < 1) {
+      messageError = "Invalid Message";
+    }
+
+    if (nameError || emailError || messageError) {
+      this.setState({ nameError, emailError, messageError });
+      return false;
+    }
+
+    return true;
+  };
+
+  onSendEmail = (e) => {
+    e.preventDefault();
+    const isValid = this.validate();
+
+    if (isValid) {
+
+      emailjs
+        .sendForm(
+          "gmail",
+          "ramesh_photographyt",
+          e.target,
+          "user_gMyCgBMYHPFmnRlkCVMFr"
+        )
+        .then(
+          (result) => {
+            console.log(result.text);
+            browserHistory.push("/submitsuccess");
+          },
+          (error) => {
+            console.log(error.text);
+          }
+        );
+    }
+  };
+
+  
+
+  /* onSubmit(e){
     e.preventDefault()
   
 
@@ -74,6 +127,7 @@ class Contact extends Component {
 
     
   }
+ */
 
   render() {
     return (
@@ -81,34 +135,39 @@ class Contact extends Component {
         <h1>Contact</h1>
         <div className="text-message">
           <p style={{ textDecoration: "underline" }}>Leave a message</p>
-          <form onSubmit={this.onSubmit}>
+          <form onSubmit=/* this.onSubmit */{this.onSendEmail}>
             <TextInputGroup
               label="Name: "
-              name="name"
+              name="contact_name"
               placeholder="Enter name..."
               value={this.state.contact_name}
               onChange={this.onChangeName}
-              error={this.state.errors.contact_name}
             />
+            <div style={{ fontSize: 16, color: "red" }}>
+              {this.state.nameError}
+            </div>
             <TextInputGroup
               label="Email Address: "
-              name="email"
+              name="contact_email"
               placeholder="Enter email..."
               value={this.state.contact_email}
               onChange={this.onChangeEmail}
-              error={this.state.errors.contact_email}
             />
+            <div style={{ fontSize: 16, color: "red" }}>
+              {this.state.emailError}
+            </div>
             <TextInputGroup
               label="Message: "
               name="message"
               placeholder="Write your message here..."
               value={this.state.message}
               onChange={this.onChangeMessage}
-              error={this.state.errors.message}
             />
+            <div style={{ fontSize: 16, color: "red" }}>
+              {this.state.messageError}
+            </div>
             <br />
             <input type="submit" value="Submit" className="submit-button" />
-          
           </form>
         </div>
         <p>

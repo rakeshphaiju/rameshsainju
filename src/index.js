@@ -1,41 +1,21 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import { Router, browserHistory, IndexRoute } from "react-router";
-import {Switch, Route, BrowserRouter} from "react-router-dom";
-
-// Import components
-import App from "./App";
-import Albums from "./components/album/Albums";
-import Album from "./components/album/Album";
-import Photo from "./components/album/Photo";
-
-import Cinematography from "./components/Cinematography";
-import About from "./components/About";
-import Contact from "./components/contact/Contact";
-
-import MessageList from "./components/contact/MessageList";
-import SubmitSuccess from "./components/contact/SubmitSuccess";
-import  {Admin}  from "./admin";
-import { ProtectedRoute } from './protected.route';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
+import * as serviceWorker from './serviceWorker';
+import { BrowserRouter } from "react-router-dom";
 
 
-ReactDOM.render(<BrowserRouter>
-  <Router history={browserHistory}>
-    <Switch>
-    <Route path="/" component={App}>
-      <IndexRoute component={Albums} />
-      <Route exact path="/cinematography" component={Cinematography} />
-      <Route exact path="/about" component={About} />
-      <Route exact path="/contact" component={Contact} />
-      <ProtectedRoute exact path="/messages" component={MessageList}/>
-      <Route exact path="/submitsuccess" component={SubmitSuccess}/>
-      <Route exact path="/admin" component={Admin}/>
-
-      <Route path=":albumName" component={Album} />
-    </Route>
- 
-    </Switch>
-  </Router>
-  </BrowserRouter>,
-  document.getElementById("root")
+ReactDOM.render(
+  <React.StrictMode>
+    <BrowserRouter>
+    <App />
+    </BrowserRouter>
+  </React.StrictMode>,
+  document.getElementById('root')
 );
+
+// If you want your app to work offline and load faster, you can change
+// unregister() to register() below. Note this comes with some pitfalls.
+// Learn more about service workers: https://bit.ly/CRA-PWA
+serviceWorker.unregister();

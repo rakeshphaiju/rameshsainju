@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import classnames from "classnames";
-import "../css/style.css";
+import classnames from 'classnames';
+import "../style.css";
 
 const TextInputGroup = ({
   label,
@@ -37,7 +37,7 @@ TextInputGroup.propTypes = {
   type: PropTypes.string.isRequired,
   placeholder: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
-  error: PropTypes.string
+  error: PropTypes.string.isRequired
 };
 
 TextInputGroup.defaultProps = {

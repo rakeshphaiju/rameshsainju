@@ -115,12 +115,20 @@ a {
     width: 50%;
     margin: 2.5%;
   }
+  .thumbImage img {
+    height: 550px;
+    width: 100%;
+  }
 }
 
 @media (min-width: 756px) {
   .thumbContainer .thumb {
     width: 45%;
     margin: 1em;
+  }
+  .thumbImage img{
+    height: 580px;
+    width: 100%;
   }
 }
 

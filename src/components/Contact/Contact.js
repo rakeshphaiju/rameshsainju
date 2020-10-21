@@ -64,7 +64,7 @@ class Contact extends Component {
     return true;
   };
 
-  onSendEmail = (e) => {
+  onSendEmail = (e, props) => {
     e.preventDefault();
     const isValid = this.validate();
 
@@ -80,7 +80,7 @@ class Contact extends Component {
         .then(
           (result) => {
             console.log(result.text);
-            browserHistory.push("/submitsuccess");
+            this.props.history.push("/submitsuccess");
           },
           (error) => {
             console.log(error.text);

@@ -1,21 +1,22 @@
 class Auth {
-  constructor() {
-    this.authenicated = false;
-  }
+  constructor(){
+    this.authenticated = false;
 
-  login(cb) {
-    this.authenicated = true;
+  }
+  login(cb){
+    this.authenticated = true;
+    cb();
+
+  }
+  logout(cb){
+    this.authenticated = false;
     cb();
   }
 
-  logout(cb) {
-    this.authenicated = false;
-    cb();
+  isLoggedIn(){
+    return this.authenticated;
   }
 
-  isAuthenticated(){
-    return this.authenicated;
-  }
 }
 
-export default new Auth();
+export default new Auth()

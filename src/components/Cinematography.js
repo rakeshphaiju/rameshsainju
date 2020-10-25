@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Youtube from './youtube/Youtube'
+import Youtube from './Youtube/Youtube'
 
 class Cinematography extends Component {
   render() {

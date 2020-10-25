@@ -2,7 +2,7 @@ import firebase from 'firebase'
 import 'firebase/storage'
 
 
-export const app =  firebase.initializeApp({
+ const app =  firebase.initializeApp({
   "projectId": "frb-albm",
   "appId": "1:45417098047:web:3e2bbb21a0d4d369a1418a",
   "databaseURL": "https://frb-albm.firebaseio.com",
@@ -13,3 +13,4 @@ export const app =  firebase.initializeApp({
   "messagingSenderId": "45417098047"
 });
 
+export default app;

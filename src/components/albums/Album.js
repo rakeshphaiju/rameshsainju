@@ -1,17 +1,45 @@
 import React, { useState, useEffect } from "react";
 import { useRouteMatch, Link } from "react-router-dom";
 import Rotate from "react-reveal/Rotate";
-import auth from "../../auth";
 
-import { app } from "../../base";
+import app from "../../base";
 import { NewPhoto } from "../admin/NewPhoto";
 
 const db = app.firestore();
 
 export const Album = (props) => {
+
+  const [user, setUser] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [emailError, setEmailError] = useState("");
+
+  
+  const clearInputs = () => {
+    setEmail("");
+    setPassword(" ");
+  };
+
+  const authListener = () => {
+    app.auth().onAuthStateChanged((user) => {
+      if (user) {
+        clearInputs();
+        setUser(user);
+      } else {
+        setUser("");
+      }
+    });
+  };
+
+  useEffect(() => {
+    authListener();
+  }, []);
+
+
+
+
   const [images, setImages] = useState([]);
   const [albumName, setAlbumName] = useState("");
-  let [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const match = useRouteMatch("/:album");
   const { album } = match.params;
@@ -45,16 +73,13 @@ export const Album = (props) => {
         </div>
       </div>
       <footer>
-        {
-          (isLoggedIn ? (
-            <>
-              <NewPhoto currentAlbum={album} />
-              
-            </>
-          ) : (
-            <></>
-          ))
-        }
+        {user ? (
+          <>
+            <NewPhoto currentAlbum={album} />
+          </>
+        ) : (
+          <></>
+        )}
       </footer>
     </div>
   );

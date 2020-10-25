@@ -1,12 +1,37 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import { Link } from "react-router-dom";
 import Flip from "react-reveal/Flip";
-import auth from '../auth';
+import app from '../base';
 
 import { NewAlbumForm } from "./admin/NewAlbumForm";
 
 export const Home = ({ albums }) => {
-  let [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [user, setUser] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [emailError, setEmailError] = useState("");
+
+  
+  const clearInputs = () => {
+    setEmail("");
+    setPassword(" ");
+  };
+
+  const authListener = () => {
+    app.auth().onAuthStateChanged((user) => {
+      if (user) {
+        clearInputs();
+        setUser(user);
+      } else {
+        setUser("");
+      }
+    });
+  };
+
+  useEffect(() => {
+    authListener();
+  }, []);
+
   return (
     <>
       <div className="thumbContainer">
@@ -25,7 +50,7 @@ export const Home = ({ albums }) => {
         ))}
       </div>
      
-       {isLoggedIn ? <> <NewAlbumForm/></> : <> </>}  
+       {user ? <> <NewAlbumForm/></> : <> </>}  
          
     </>
   );

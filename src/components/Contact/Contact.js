@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import emailjs from "emailjs-com";
 
-import { browserHistory } from "react-router";
-
 import TextInputGroup from "../layout/TextInputGroup";
 import "../css/style.css";
 // import axios from "axios";

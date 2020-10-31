@@ -19,7 +19,8 @@ import SubmitSuccess from "./components/contact/SubmitSuccess";
 import Cinematography from "./components/Cinematography";
 import About from "./components/About";
 import Contact from "./components/contact/Contact";
-
+import NotFound from './components/layout/NotFound';
+ 
 import app from "./base";
 
 const db = app.firestore();
@@ -52,6 +53,7 @@ function App() {
         <Route exact path="/submitsuccess" component={SubmitSuccess}/>
         <Route exact path="/dashboard" render={() => <Dashboard albums={albums} />} />
         <Route exact path="/admin" component ={Login}/>
+        <Route component={NotFound}/>
 
         { /*<Route path = "/:album" component={AddPhoto}/> */}
         <Route path="/:album" component={Album} />

@@ -54,6 +54,20 @@ export const Album = (props) => {
     return unmount;
   });
 
+  const onDelete = (props) => {
+    db.collection("albums")
+      .doc(album)
+      .delete()
+      .then(function () {
+        console.log("Album successfully deleted!");
+        props.history.push('/admin');
+      })
+      .catch(function (error) {
+        console.error("Error removing document: ", error);
+      });
+  };
+
+
   return (
     <div className="back">
       <p className="arrow">&#10096;</p>
@@ -66,7 +80,7 @@ export const Album = (props) => {
           {images.map((image) => (
             <div key={image.name} className="">
               <Rotate top left>
-                <img src={image.url} alt="album" />
+                <img src={image.url} alt="album" className="largePhoto"/>
               </Rotate>
             </div>
           ))}
@@ -76,6 +90,7 @@ export const Album = (props) => {
         {user ? (
           <>
             <NewPhoto currentAlbum={album} />
+            <button onClick={onDelete}>Drop this album</button>
           </>
         ) : (
           <></>

@@ -104,11 +104,11 @@ a {
 }
 
 .largePhoto {
-  width: 90%;
-  max-width: 500px;
-  display: block;
-  margin: 0 auto;
-  padding-bottom: 10em; }
+  width: 100%;
+  max-width: 1500px;
+  height: auto;
+  margin: 20px;
+  padding-bottom: 2em; }
 
 @media (min-width: 480px) {
   .thumbContainer .thumb {

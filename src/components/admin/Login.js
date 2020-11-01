@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import app from '../../base'
  
 import AdminLogin from "./AdminLogin";
-import Hero from './Hero'
+import AdminDashboard from './AdminDashboard'
 
 export const Login = () => {
   const [user, setUser] = useState("");
@@ -10,7 +10,6 @@ export const Login = () => {
   const [password, setPassword] = useState("");
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
-  const [hashAccount, setHashAccount] = useState(false);
 
   const clearInputs = () => {
     setEmail("");
@@ -83,7 +82,7 @@ export const Login = () => {
     <div className="App">
       {user ? (
         <>
-         <Hero handleLogout={handleLogout} />
+         <AdminDashboard handleLogout={handleLogout} />
         </>
       ) : (
         <>
@@ -94,8 +93,6 @@ export const Login = () => {
             setPassword={setPassword}
             handleLogin={handleLogin}
             handleSignup={handleSignup}
-            hashAccount={hashAccount}
-            setHashAccount={setHashAccount}
             emailError={emailError}
             passwordError={passwordError}
           />

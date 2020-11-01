@@ -1,10 +1,9 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Flip from "react-reveal/Flip";
-import app from '../base';
+import app from "../base";
 
 import { NewAlbumForm } from "./admin/NewAlbumForm";
-
 
 export const Home = ({ albums }) => {
   const [user, setUser] = useState("");
@@ -12,7 +11,6 @@ export const Home = ({ albums }) => {
   const [password, setPassword] = useState("");
   const [emailError, setEmailError] = useState("");
 
-  
   const clearInputs = () => {
     setEmail("");
     setPassword(" ");
@@ -50,9 +48,15 @@ export const Home = ({ albums }) => {
           </Link>
         ))}
       </div>
-     
-       {user ? <> <NewAlbumForm/></> : <> </>}  
-         
+
+      {user ? (
+        <>
+          {" "}
+          <NewAlbumForm />
+        </>
+      ) : (
+        <> </>
+      )}
     </>
   );
 };

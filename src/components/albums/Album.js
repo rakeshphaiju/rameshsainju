@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useRouteMatch, Link, useHistory } from "react-router-dom";
 import Rotate from "react-reveal/Rotate";
+import styled from "styled-components";
 
 
 import app from "../../base";
@@ -8,6 +9,19 @@ import { NewPhoto } from "../admin/NewPhoto";
 
 
 const db = app.firestore();
+
+const StyledButton = styled.button`
+  background: green;
+  color: #fff;
+  padding: 10px;
+  margin: 5px;
+  width: 150px;
+  border: none;
+  border-radius: 10px;
+  box-sizing: border-box;
+`;
+
+
 
 export const Album = (props) => {
 
@@ -97,7 +111,7 @@ let history = useHistory();
         {user ? (
           <>
             <NewPhoto currentAlbum={album} />
-            <button onClick={onDelete}>Drop this album</button>
+            <StyledButton onClick={onDelete}>Drop album</StyledButton>
           </>
         ) : (
           <></>

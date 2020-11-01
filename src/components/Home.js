@@ -5,6 +5,7 @@ import app from '../base';
 
 import { NewAlbumForm } from "./admin/NewAlbumForm";
 
+
 export const Home = ({ albums }) => {
   const [user, setUser] = useState("");
   const [email, setEmail] = useState("");

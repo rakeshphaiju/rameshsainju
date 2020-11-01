@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import app from "../../base";
 
+import '../style.css'
+
 const db = app.firestore();
 
 export const NewAlbumForm = () => {

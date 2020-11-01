@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { useRouteMatch, Link } from "react-router-dom";
+import { useRouteMatch, Link, useHistory } from "react-router-dom";
 import Rotate from "react-reveal/Rotate";
+
 
 import app from "../../base";
 import { NewPhoto } from "../admin/NewPhoto";
+
 
 const db = app.firestore();
 
@@ -44,6 +46,7 @@ export const Album = (props) => {
   const match = useRouteMatch("/:album");
   const { album } = match.params;
 
+
   useEffect(() => {
     const unmount = db
       .collection("albums")
@@ -54,13 +57,17 @@ export const Album = (props) => {
     return unmount;
   });
 
-  const onDelete = (props) => {
+
+let history = useHistory();
+  
+  const onDelete = () => {
+    
     db.collection("albums")
       .doc(album)
       .delete()
-      .then(function () {
+      .then(() => {
         console.log("Album successfully deleted!");
-        props.history.push('/admin');
+        history.push("/");
       })
       .catch(function (error) {
         console.error("Error removing document: ", error);

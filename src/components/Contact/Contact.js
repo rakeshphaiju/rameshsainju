@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import emailjs from "emailjs-com";
 
-import { browserHistory } from "react-router";
-
 import TextInputGroup from "../layout/TextInputGroup";
 import "../css/style.css";
 // import axios from "axios";
@@ -64,7 +62,7 @@ class Contact extends Component {
     return true;
   };
 
-  onSendEmail = (e) => {
+  onSendEmail = (e, props) => {
     e.preventDefault();
     const isValid = this.validate();
 
@@ -80,7 +78,7 @@ class Contact extends Component {
         .then(
           (result) => {
             console.log(result.text);
-            browserHistory.push("/submitsuccess");
+            this.props.history.push("/submitsuccess");
           },
           (error) => {
             console.log(error.text);

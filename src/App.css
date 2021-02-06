@@ -104,16 +104,20 @@ a {
 }
 
 .largePhoto {
-  width: 90%;
-  max-width: 500px;
-  display: block;
-  margin: 0 auto;
-  padding-bottom: 10em; }
+  width: 100%;
+  max-width: 1080px;
+  height: auto;
+  margin: 20px;
+  padding-bottom: 2em; }
 
 @media (min-width: 480px) {
   .thumbContainer .thumb {
     width: 50%;
     margin: 2.5%;
+  }
+  .thumbImage img {
+    height: 550px;
+    width: 100%;
   }
 }
 
@@ -121,6 +125,10 @@ a {
   .thumbContainer .thumb {
     width: 45%;
     margin: 1em;
+  }
+  .thumbImage img{
+    height: 580px;
+    width: 100%;
   }
 }
 
